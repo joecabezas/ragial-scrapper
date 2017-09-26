@@ -4,11 +4,6 @@ class RagialSpider(scrapy.Spider):
     name = 'ragialspider'
     allowed_domains = ["ragi.al"]
 
-    start_urls = [
-        'http://ragi.al/item/iRO-Odin/5wM',
-        'http://ragi.al/item/iRO-Odin/hQI'
-    ]
-
     def parse(self, response):
         item_name = response.xpath("//div[@class='mkt_left']/h1/a[2]/text()").extract_first().strip()
         quantity_sold = response.xpath("//table[@id='avgtable']/tr[1]/td[1]/text()").extract_first()
@@ -30,6 +25,7 @@ class RagialSpider(scrapy.Spider):
         yield scrapy.Request(next_page, callback=self.parse_sellers, meta={
             'item': {
                 'item_name': item_name,
+                'item_url': response.request.url,
                 'quantity_sold': quantity_sold,
                 'minimum_price': minimum_price,
                 'maximum_price': maximum_price,
@@ -64,7 +60,7 @@ class RagialSpider(scrapy.Spider):
                     'price': price
                 }
 
-                yield scrapy.Request(seller_page, callback=self.parse_seller, meta={'seller': seller})
+                # yield scrapy.Request(seller_page, callback=self.parse_seller, meta={'seller': seller})
 
                 item['sellers'].append(seller)
             else:

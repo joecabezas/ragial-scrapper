@@ -1,0 +1,34 @@
+- name: Elunium
+  url: http://ragi.al/item/iRO-Odin/2QM
+  maximum price:
+  auto price: true
+
+- name: Empty Bottle
+  url: http://ragi.al/item/iRO-Odin/yQI
+  maximum price:
+  auto price: true
+
+- name: Steel
+  url: http://ragi.al/item/iRO-Odin/5wM
+  maximum price:
+  auto price: true
+
+- name: Snake Scale
+  url: http://ragi.al/item/iRO-Odin/ngM
+  maximum price:
+  auto price: true
+
+- name: Mushroom Spore
+  url: http://ragi.al/item/iRO-Odin/5wM
+  maximum price:
+  auto price: true
+
+- name: Rough Oridecon
+  url: http://ragi.al/item/iRO-Odin/9AI
+  maximum price:
+  auto price: true
+
+- name: Iron Ore
+  url: http://ragi.al/item/iRO-Odin/6gM
+  maximum price:
+  auto price: true
